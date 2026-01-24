@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Success</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <style>
+    #mainImage {
+      height: auto;
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <img
+      id="mainImage"
+      src="image2.jpg"
+      alt="Payment Status">
+  </div>
+
+  <audio id="sound" src="paytm sound.mp3"></audio>
+
+  <script>
+    let played = false;
+    document.getElementById("clickArea").addEventListener("click", () => {
+      if (!played) {
+        const audio = document.getElementById("sound");
+        audio.play().catch(e => console.log("Audio play failed:", e));
+        document.getElementById("tapHint").style.display = "none";
+        played = true;
+      }
+    });
+  </script>
+
+</body>
+</html>
